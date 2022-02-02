@@ -90,6 +90,7 @@ class RegistrationForm extends Model
 
 		$user = new User();
 		$user->password = $this->password;
+        $user->username = $this->username;
 
 		if ( Yii::$app->getModule('user-management')->useEmailAsLogin )
 		{
@@ -114,27 +115,34 @@ class RegistrationForm extends Model
 					$this->addError('username', UserManagementModule::t('front', 'Could not send confirmation email'));
 				}
 			}
-			else
-			{
-				$user->username = $this->username;
-			}
-		}
-		else
-		{
-			$user->username = $this->username;
 		}
 
+		$transaction = null;
+		if ( !Yii::$app->db->getTransaction() ) {
 
-		if ( $user->save() )
-		{
-			$this->saveProfile($user);
+		    $transaction = Yii::$app->db->beginTransaction();
+        }
 
-			return $user;
-		}
-		else
-		{
-			$this->addError('username', UserManagementModule::t('front', 'Login has been taken'));
-		}
+		try {
+            if ( $user->save() ) {
+
+                $this->saveProfile( $user );
+                if ( $transaction ) {
+
+                    $transaction->commit();
+                }
+                return $user;
+            } else {
+                $this->addError( 'username', UserManagementModule::t( 'front', 'Login has been taken' ) );
+            }
+        } catch ( \Throwable $error ) {
+
+		    if ( $transaction ) {
+
+                $transaction->rollBack();
+            }
+		    throw $error;
+        }
 	}
 
 	/**

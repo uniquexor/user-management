@@ -376,10 +376,11 @@ class User extends UserIdentity
 				}
 
 				// Don't let non-superadmin edit superadmin
-				if ( isset($this->oldAttributes['superadmin']) && !Yii::$app->user->isSuperadmin && $this->oldAttributes['superadmin'] == 1 )
-				{
-					return false;
-				}
+                if ( !Yii::$app->user->isGuest ) {
+                    if ( isset( $this->oldAttributes[ 'superadmin' ] ) && !Yii::$app->user->isSuperadmin && $this->oldAttributes[ 'superadmin' ] == 1 ) {
+                        return false;
+                    }
+                }
 			}
 		}
 

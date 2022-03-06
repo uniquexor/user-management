@@ -54,6 +54,16 @@ class LoginForm extends Model
 		if ( !$this->hasErrors() )
 		{
 			$user = $this->getUser();
+			if ( !$user && Yii::$app->getModule('user-management')->emailConfirmationRequired ) {
+
+                $u = User::findByUsername($this->username, null);
+                if ( $u && !$u->email_confirmed) {
+
+                    $this->addError('password', UserManagementModule::t('front', 'Your email has not been confirmed yet.'));
+                    return false;
+                }
+            }
+
 			if ( !$user || !$user->validatePassword($this->password) )
 			{
 				$this->addError('password', UserManagementModule::t('front', 'Incorrect username or password.'));

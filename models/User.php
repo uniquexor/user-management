@@ -363,7 +363,7 @@ class User extends UserIdentity
 			// Console doesn't have Yii::$app->user, so we skip it for console
 			if ( php_sapi_name() != 'cli' )
 			{
-				if ( Yii::$app->user->id == $this->id )
+				if ( !Yii::$app->user->isGuest && Yii::$app->user->id == $this->id )
 				{
 					// Make sure user will not deactivate himself
 					$this->status = static::STATUS_ACTIVE;

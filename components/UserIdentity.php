@@ -46,13 +46,13 @@ abstract class UserIdentity extends ActiveRecord implements IdentityInterface
 	 */
 	public static function findByUsername($username, $status = User::STATUS_ACTIVE)
 	{
-	    $query = static::findOne(['username' => $username]);
+	    $query = static::find()->where(['username' => $username]);
 	    if ( $status !== null ) {
 
 	        $query->andWhere(['status' => $status]);
         }
 
-	    return $query;
+	    return $query->one();
 	}
 
 	/**

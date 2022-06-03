@@ -148,18 +148,20 @@ class AuthController extends BaseController
 				{
 					if ( $user )
 					{
+
+                        $roles = (array)$this->module->rolesAfterRegistration;
+
+                        foreach ($roles as $role)
+                        {
+                            User::assignRole($user->id, $role);
+                        }
+                        
 						if ( Yii::$app->getModule('user-management')->useEmailAsLogin AND Yii::$app->getModule('user-management')->emailConfirmationRequired )
 						{
 							return $this->renderIsAjax('registrationWaitForEmailConfirmation', compact('user'));
 						}
 						else
 						{
-							$roles = (array)$this->module->rolesAfterRegistration;
-
-							foreach ($roles as $role)
-							{
-								User::assignRole($user->id, $role);
-							}
 
 							Yii::$app->user->login($user);
 

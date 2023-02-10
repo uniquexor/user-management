@@ -5,7 +5,7 @@
 
 CREATE TABLE IF NOT EXISTS `auth_assignment` (
   `item_name` varchar(64) NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `user_id` int(11) unsigned NOT NULL,
   `created_at` int(11) DEFAULT NULL,
   PRIMARY KEY (`item_name`,`user_id`),
   KEY `user_id` (`user_id`)
@@ -304,7 +304,7 @@ CREATE TABLE IF NOT EXISTS `user_visit_log` (
   `ip` varchar(15) NOT NULL,
   `language` char(2) NOT NULL,
   `user_agent` varchar(255) NOT NULL,
-  `user_id` int(11) DEFAULT NULL,
+  `user_id` int(11) unsigned DEFAULT NULL,
   `visit_time` int(11) NOT NULL,
   `browser` varchar(30) DEFAULT NULL,
   `os` varchar(20) DEFAULT NULL,

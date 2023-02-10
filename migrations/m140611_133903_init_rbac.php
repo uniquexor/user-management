@@ -67,7 +67,7 @@ class m140611_133903_init_rbac extends \yii\db\Migration
 			// Create auth_assignment_table table
 			$this->createTable($auth_assignment_table_name, [
 				'item_name' => Schema::TYPE_STRING . '(64) NOT NULL',
-				'user_id' => Schema::TYPE_INTEGER . ' NOT NULL',
+				'user_id' => Schema::TYPE_INTEGER . ' unsigned NOT NULL',
 				'created_at' => Schema::TYPE_INTEGER,
 				'PRIMARY KEY (item_name, user_id)',
 				'FOREIGN KEY (item_name) REFERENCES ' . Yii::$app->getModule('user-management')->auth_item_table . ' (name) ON DELETE CASCADE ON UPDATE CASCADE',

@@ -1,6 +1,8 @@
 {
 	"name": "unique/module-user-management",
 	"description": "User with improved RBAC",
+	"type": "yii2-extension",
+	"keywords": ["yii2","extension","usermanagement"],
 	"autoload": {
 		"psr-4": {
 			"unique\\modules\\UserManagement\\": ""

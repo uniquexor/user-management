@@ -1,11 +1,11 @@
 <?php
 
-namespace webvimark\modules\UserManagement\controllers;
+namespace unique\modules\UserManagement\controllers;
 
 use webvimark\components\AdminDefaultController;
 use Yii;
-use webvimark\modules\UserManagement\models\User;
-use webvimark\modules\UserManagement\models\search\UserSearch;
+use unique\modules\UserManagement\models\User;
+use unique\modules\UserManagement\models\search\UserSearch;
 use yii\web\NotFoundHttpException;
 
 /**
@@ -16,12 +16,12 @@ class UserController extends AdminDefaultController
 	/**
 	 * @var User
 	 */
-	public $modelClass = 'webvimark\modules\UserManagement\models\User';
+	public $modelClass = 'unique\modules\UserManagement\models\User';
 
 	/**
 	 * @var UserSearch
 	 */
-	public $modelSearchClass = 'webvimark\modules\UserManagement\models\search\UserSearch';
+	public $modelSearchClass = 'unique\modules\UserManagement\models\search\UserSearch';
 
 	/**
 	 * @return mixed|string|\yii\web\Response

@@ -2,12 +2,12 @@
 /**
  * @var yii\web\View $this
  * @var array $permissionsByGroup
- * @var webvimark\modules\UserManagement\models\User $user
+ * @var unique\modules\UserManagement\models\User $user
  */
 
-use webvimark\modules\UserManagement\components\GhostHtml;
-use webvimark\modules\UserManagement\models\rbacDB\Role;
-use webvimark\modules\UserManagement\UserManagementModule;
+use unique\modules\UserManagement\components\GhostHtml;
+use unique\modules\UserManagement\models\rbacDB\Role;
+use unique\modules\UserManagement\UserManagementModule;
 use yii\bootstrap\BootstrapPluginAsset;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;

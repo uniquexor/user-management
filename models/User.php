@@ -127,6 +127,27 @@ class User extends UserIdentity
 		return $result;
 	}
 
+    /**
+     * Revokes all roles from user
+     *
+     * @param int    $userId
+     *
+     * @return bool
+     */
+    public static function revokeAllRoles($userId)
+    {
+        $result = Yii::$app->db->createCommand()
+                ->delete(Yii::$app->getModule('user-management')->auth_assignment_table, ['user_id' => $userId])
+                ->execute() > 0;
+
+        if ( $result )
+        {
+            AuthHelper::invalidatePermissions();
+        }
+
+        return $result;
+    }
+
 	/**
 	 * @param string|array $roles
 	 * @param bool         $superAdminAllowed

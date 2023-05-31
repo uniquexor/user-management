@@ -2,10 +2,10 @@
 
 namespace unique\modules\UserManagement\controllers;
 
+use unique\modules\UserManagement\components\AdminDefaultController;
 use unique\modules\UserManagement\models\rbacDB\AuthItemGroup;
 use unique\modules\UserManagement\models\rbacDB\search\AuthItemGroupSearch;
 use Yii;
-use webvimark\components\AdminDefaultController;
 
 /**
  * AuthItemGroupController implements the CRUD actions for AuthItemGroup model.

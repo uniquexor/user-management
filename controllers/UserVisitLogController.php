@@ -5,7 +5,7 @@ namespace unique\modules\UserManagement\controllers;
 use Yii;
 use unique\modules\UserManagement\models\UserVisitLog;
 use unique\modules\UserManagement\models\search\UserVisitLogSearch;
-use webvimark\components\AdminDefaultController;
+use unique\modules\UserManagement\components\AdminDefaultController;
 
 /**
  * UserVisitLogController implements the CRUD actions for UserVisitLog model.

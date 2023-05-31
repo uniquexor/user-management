@@ -2,11 +2,11 @@
 
 namespace unique\modules\UserManagement\controllers;
 
+use unique\modules\UserManagement\components\AdminDefaultController;
 use unique\modules\UserManagement\components\AuthHelper;
 use unique\modules\UserManagement\models\rbacDB\Permission;
 use unique\modules\UserManagement\models\rbacDB\Role;
 use unique\modules\UserManagement\models\rbacDB\search\RoleSearch;
-use webvimark\components\AdminDefaultController;
 use unique\modules\UserManagement\UserManagementModule;
 use Yii;
 use yii\rbac\DbManager;

@@ -2,7 +2,7 @@
 
 namespace unique\modules\UserManagement\controllers;
 
-use webvimark\components\BaseController;
+use unique\modules\UserManagement\components\BaseController;
 use unique\modules\UserManagement\models\rbacDB\Permission;
 use unique\modules\UserManagement\models\rbacDB\Role;
 use unique\modules\UserManagement\models\User;

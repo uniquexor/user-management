@@ -4,11 +4,11 @@ namespace unique\modules\UserManagement\controllers;
 
 
 use unique\modules\UserManagement\components\AuthHelper;
+use unique\modules\UserManagement\components\AdminDefaultController;
 use unique\modules\UserManagement\models\rbacDB\AbstractItem;
 use unique\modules\UserManagement\models\rbacDB\Permission;
 use unique\modules\UserManagement\models\rbacDB\Route;
 use unique\modules\UserManagement\models\rbacDB\search\PermissionSearch;
-use webvimark\components\AdminDefaultController;
 use unique\modules\UserManagement\UserManagementModule;
 use Yii;
 

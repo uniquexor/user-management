@@ -2,7 +2,7 @@
 
 namespace unique\modules\UserManagement\controllers;
 
-use webvimark\components\BaseController;
+use unique\modules\UserManagement\components\BaseController;
 use unique\modules\UserManagement\components\UserAuthEvent;
 use unique\modules\UserManagement\models\forms\ChangeOwnPasswordForm;
 use unique\modules\UserManagement\models\forms\ConfirmEmailForm;

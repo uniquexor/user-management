@@ -2,7 +2,7 @@
 
 namespace unique\modules\UserManagement\controllers;
 
-use webvimark\components\AdminDefaultController;
+use unique\modules\UserManagement\components\AdminDefaultController;
 use Yii;
 use unique\modules\UserManagement\models\User;
 use unique\modules\UserManagement\models\search\UserSearch;
